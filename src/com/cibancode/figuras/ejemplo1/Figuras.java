@@ -4,26 +4,17 @@ import java.util.Vector;
 import java.util.Enumeration;
 
 public class Figuras {
-    Vector<Cuadrado> cuadrados=new Vector<Cuadrado>();
-    Vector<Circulo> circulos= new Vector<Circulo>();
-    public void addCirculo(Circulo c){
-        circulos.add(c);
+    private Vector<Figura> figuras = new Vector<>();
+
+    public void addFigura(Figura f) {
+        figuras.add(f);
     }
-    public void addCuadrado(Cuadrado c){
-        cuadrados.add(c);
-    }
-    public void dibujarFiguras(){
-        Enumeration<Cuadrado> cuads=cuadrados.elements();
-        Cuadrado c;
-        while (cuads.hasMoreElements()){
-            c=cuads.nextElement();
-            c.dibujar();
-        }
-        Enumeration<Circulo> circs=circulos.elements();
-        Circulo ci;
-        while (cuads.hasMoreElements()){
-            ci=circs.nextElement();
-            ci.dibujar();
+
+    public void dibujarFiguras() {
+        Enumeration<Figura> elems = figuras.elements();
+        while (elems.hasMoreElements()) {
+            Figura f = elems.nextElement();
+            f.dibujar();
         }
     }
 }
